@@ -186,34 +186,130 @@
 
 <!-- PROJECTS -->
 <section id="projects" class="projects-section">
-  <h2 data-aos="fade-up" data-aos-delay="100">Selected Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card" data-aos="fade-up" data-aos-delay="250">
-      <div class="project-image" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3>Startup Platform</h3>
-        <p>High-performance website with scalable backend.</p>
-        <div class="project-tags">
-          <span>UI/UX</span><span>Laravel</span>
+  <h2 data-aos="fade-up" data-aos-delay="100">Projects</h2>
+ 
+  <!-- Carousel Wrapper -->
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="project-gallery">
+      <!-- Project 1 -->
+      <div class="project" onclick="window.open('https://secure.setshape.com/login','_blank')">
+        <div class="project-img">
+          <img src="Shape-Software.png" alt="shape software website" />
+        </div>
+        <div class="project-caption">
+          <h3>Shape Software Login | Secure Access to Your CRM Platform</h3>
         </div>
       </div>
-    </div>
 
-    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-      <div class="project-image" data-aos="fade-up" data-aos-delay="450">
-        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3>Brand Identity</h3>
-        <p>Complete branding & responsive website.</p>
-        <div class="project-tags">
-          <span>Branding</span><span>Design</span>
+      <!-- Project 2 -->
+      <div class="project" onclick="window.open('https://bubbyg.com/','_blank')">
+        <div class="project-img">
+          <img src="bubby-g.png" alt="bubbyG website" />
+        </div>
+        <div class="project-caption">
+          <h3>Bubbyg</h3>
         </div>
       </div>
+
+      <!-- Project 3 -->
+      <div class="project" onclick="window.open('https://msmesarathi.com/','_blank')">
+        <div class="project-img">
+          <img src="msme.png" alt="msme website" />
+        </div>
+        <div class="project-caption">
+          <h3>Free Legal Advisory for MSMEs & Small Businesses - Recover delayed payments - MSME Sarathi | MSME Sarathi</h3>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project" onclick="window.open('https://plus.xssecure.com/','_blank')">
+        <div class="project-img">
+          <img src="xssecure.png" alt="xssecure website" />
+        </div>
+        <div class="project-caption">
+          <h3>xssecure | XSSECURE XTS PLUS</h3>
+        </div>
+      </div>
+
+       <!-- Project 5 -->
+      <div class="project" onclick="window.open('https://vahansetu.com/','_blank')">
+        <div class="project-img">
+          <img src="vahansetu.png" alt="vahansetu website" />
+        </div>
+        <div class="project-caption">
+          <h3>vahansetu</h3>
+        </div>
+      </div>
+
+
+       <!-- Project 6 -->
+      <div class="project" onclick="window.open('https://padelcentretz.com/','_blank')">
+        <div class="project-img">
+          <img src="pedalcentre.png" alt="pedalcentretz website" />
+        </div>
+        <div class="project-caption">
+          <h3>Pedalcentre</h3>
+        </div>
+      </div>
+
+       <!-- Project 7 -->
+      <div class="project" onclick="window.open('https://grow.conjoinix.com/','_blank')">
+        <div class="project-img">
+          <img src="grow.png" alt="grow server website" />
+        </div>
+        <div class="project-caption">
+          <h3>Grow License Service</h3>
+        </div>
+      </div>
+
+       <!-- ezybuy -->
+      <div class="project" onclick="window.open('https://ezybuy.shop/','_blank')">
+        <div class="project-img">
+          <img src="ezybuy.png" alt="ezybuy buy everything website" />
+        </div>
+        <div class="project-caption">
+          <h3>Ezybuy Online Electronics shopping sites</h3>
+        </div>
+      </div>
+
+
+       <!-- Project 8 -->
+      <div class="project" onclick="window.open('https://vltdladakh.in/','_blank')">
+        <div class="project-img">
+          <img src="vltd-ladhak.png" alt="vltdladhak website" />
+        </div>
+        <div class="project-caption">
+          <h3>vltd ladakh AIS140 Vehicle Security Solution for Ladakh</h3>
+        </div>
+      </div>
+
+
+      <!-- Project 9 -->
+      <div class="project" onclick="window.open('https://www.conjoinix.com/','_blank')">
+        <div class="project-img">
+          <img src="conjoinix.png" alt="conjoinix website" />
+        </div>
+        <div class="project-caption">
+          <h3>Conjoinix total solution</h3>
+        </div>
+      </div>
+
+
+       <!-- Project 10 -->
+      <div class="project" onclick="window.open('https://rksautoindia.in/','_blank')">
+        <div class="project-img">
+          <img src="rksauto.png" alt="conjoinix website" />
+        </div>
+        <div class="project-caption">
+          <h3>Rks auto India</h3>
+        </div>
+      </div>
+
     </div>
+    <button class="carousel-btn next">&#10095;</button>
   </div>
+
 </section>
 
 <!-- SKILLS -->
@@ -297,6 +393,35 @@ const lenis = new Lenis({
   requestAnimationFrame(raf);
 
  
+//  project section css 
+const carousel = document.querySelector('.project-gallery');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+
+let scrollAmount = 0;
+const cardWidth = document.querySelector('.project').offsetWidth + 60;
+
+nextBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+});
+
+
+// Add motion zoom reaction while scrolling
+const projects = document.querySelectorAll('.project');
+window.addEventListener('scroll', () => {
+  projects.forEach(p => {
+    const rect = p.getBoundingClientRect();
+    const center = window.innerHeight / 2;
+    const distance = Math.abs(center - (rect.top + rect.height / 2));
+    const scale = 1 + Math.max(0, 0.08 - distance / 1500);
+    p.style.transform = `scale(${scale})`;
+  });
+});
+
 </script>
 
 <script>
